@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helmes.WebApi", "Helmes.WebApi\Helmes.WebApi.csproj", "{FE72C6B6-4BAA-4B01-9D5B-EA00F025A2D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helmes.WebApi", "Helmes.WebApi\Helmes.WebApi.csproj", "{FE72C6B6-4BAA-4B01-9D5B-EA00F025A2D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helmes.Shared", "Helmes.Shared\Helmes.Shared.csproj", "{D72C1ADD-E686-4166-BD87-3424435716B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helmes.Shared", "Helmes.Shared\Helmes.Shared.csproj", "{D72C1ADD-E686-4166-BD87-3424435716B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helmes.WebApiTests", "Helmes.WebApiTests\Helmes.WebApiTests.csproj", "{CE253989-FDE1-4E36-9C4B-8E0028902175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helmes.WebApiTests", "Helmes.WebApiTests\Helmes.WebApiTests.csproj", "{CE253989-FDE1-4E36-9C4B-8E0028902175}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
