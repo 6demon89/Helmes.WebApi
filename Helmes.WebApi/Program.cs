@@ -19,4 +19,4 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
 app.UseEndpointDefinitions();
-app.Run();
+app.Run("http://localhost:5136");
