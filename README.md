@@ -1,4 +1,4 @@
-# Helmes WebAPI
+# WebAPI
 ## Installation
 
 Clone the repo
