@@ -27,6 +27,7 @@ namespace Helmes.Shared.Model
             if (Sectors.Count == 0) return false;
             if (!AgreedToTerms) return false;
             if (string.IsNullOrEmpty(Name) || string.IsNullOrWhiteSpace(Name)) return false;
+            if (!Name.Where(x=>x != ' ').All(Char.IsLetter)) return false;
             return true;
         }
 

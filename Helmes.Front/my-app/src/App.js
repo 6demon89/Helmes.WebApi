@@ -13,6 +13,9 @@ const App = () => {
   const [userName,setUserName] = useState('');
   const [termAgreement,setTermAgreement] = useState(false);
   const [involvedSectors,setInvolvedSectors] = useState([]);
+  const [userID,setUserID] = useState({ID : '00000000-0000-0000-0000-000000000000'});
+  const [state,setState]  =useState();
+
 
   const handleNameChange = event => {
     setUserName(event.target.value)
@@ -55,11 +58,6 @@ const App = () => {
    };
    prepareTree(response);
    response.sort();
-   response.forEach(InsertOption);
-   function InsertOption(item)
-   {
-    //  console.log(item);
-   }
     setSectors(response);
   };
   useEffect(() => {
@@ -74,7 +72,43 @@ const App = () => {
     {
       sector.push({sectorID:e})
     }
-    console.log(sector);
+    if(userID.ID  != '00000000-0000-0000-0000-000000000000')
+    {
+      console.log(userID.ID);
+      const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          {
+              name:userName,
+              AgreedToTerms: termAgreement,
+              Sectors:sector
+          }
+          )
+      };
+    const response = fetch(
+      "http://localhost:5136/user/"+userID.ID, requestOptions)
+        .then(async response => 
+          { 
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            const data = isJson && await response.json();
+
+            if (!response.ok) {
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
+            }
+            setUserID({ ID : data.id })
+          })
+          .catch(error => {
+            setState({ errorMessage: error });
+            console.error('There was an error!', error);
+        });
+    }
+    else
+    
+    {
+
+
     const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -86,13 +120,24 @@ const App = () => {
               }
               )
         };
-        console.log(requestOptions.body);
         const response = fetch(
           "http://localhost:5136/user", requestOptions)
-            .then(response => response.json())
-            .then(data => this.setState({ postId: data.id }));
+            .then(async response => 
+              { 
+                const isJson = response.headers.get('content-type')?.includes('application/json');
+                const data = isJson && await response.json();
 
-            console.log(response);
+                if (!response.ok) {
+                    const error = (data && data.message) || response.status;
+                    return Promise.reject(error);
+                }
+                setUserID({ ID : data.id })
+              })
+              .catch(error => {
+                setState({ errorMessage: error });
+                console.error('There was an error!', error);
+            });
+          }
   };
   return (
     <form className='mt-2' onSubmit={handleSubmit}>

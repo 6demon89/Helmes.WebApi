@@ -42,7 +42,7 @@ namespace Helmes.WebApi.EndPoint.Tests
 
             var user = new User()
             {
-                Name = "гтттф",
+                Name = "UserNameValue",
                 AgreedToTerms = true,
                 Sectors = data.Take(4).ToList()
             };
@@ -62,7 +62,7 @@ namespace Helmes.WebApi.EndPoint.Tests
             var user = new User()
             {
                 ID = guid,
-                Name = "гтттф",
+                Name = "UserNameValue",
                 AgreedToTerms = true,
                 Sectors = data.Take(4).ToList()
             };
@@ -85,7 +85,7 @@ namespace Helmes.WebApi.EndPoint.Tests
             var user = new User()
             {
                 ID = guid,
-                Name = "гтттф",
+                Name = "UserNameValue",
                 AgreedToTerms = true,
                 Sectors = data.Take(4).ToList()
             };

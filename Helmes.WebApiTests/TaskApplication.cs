@@ -18,7 +18,6 @@ namespace Helmes.WebApiTests
             {
                 services.AddSingleton(sp =>
                 {
-                    // Replace SQLite with the in memory provider for tests
                     return new DbContextOptionsBuilder<DatabaseContext>()
                                 .UseInMemoryDatabase("Tests", root)
                                 .UseApplicationServiceProvider(sp)

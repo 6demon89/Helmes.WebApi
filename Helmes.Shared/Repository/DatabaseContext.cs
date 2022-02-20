@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,10 +23,15 @@ namespace Helmes.Shared.Repository
 
         private void Seed()
         {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "Helmes.Shared.Seed.SeedingData.sql";
             string values = string.Empty;
-            using (var htmlFile = new StreamReader(File.OpenRead(@"Seed\SeedingData.sql")))
-                values = htmlFile.ReadToEnd();
 
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                values = reader.ReadToEnd();
+            }
             Database.ExecuteSqlRaw(values);
         }
 
