@@ -15,6 +15,9 @@ To start React App, navigate to '\Helmes.Front\my-app' ans start with npm start 
 ## Development setup
 
 Please ensure that SQL Server or SQL Server Express is installed and running;
+In DbDump is an SQLsript to generate SQL database with seeded data values. However by design this should not be needed and on first application start (database call)
+the Schema and initial Data-Seed should be created automaticly.
+
 
 ## Couple of words about the project execution
 
