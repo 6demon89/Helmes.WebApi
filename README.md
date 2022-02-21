@@ -15,7 +15,6 @@ To start React App, navigate to '\Helmes.Front\my-app' ans start with npm start 
 ## Development setup
 
 Please ensure that SQL Server or SQL Server Express is installed and running;
-Please make sure that ports 3001 and 5136 are not blocked;
 
 ## Couple of words about the project execution
 
