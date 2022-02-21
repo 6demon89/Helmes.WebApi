@@ -2,7 +2,7 @@ using Helmes.Shared.Repository;
 var MyAllowSpecificOrigins = "_myAllowOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<DatabaseContext>(ServiceLifetime.Singleton);
+builder.Services.AddDbContext<DatabaseContext>(ServiceLifetime.Scoped);
 builder.Services.AddEndpointDefinitions(typeof(IEndpointDefinition));
 builder.Services.AddCors(options =>
 {
@@ -19,4 +19,4 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
 app.UseEndpointDefinitions();
-app.Run("http://localhost:5136");
+app.Run();

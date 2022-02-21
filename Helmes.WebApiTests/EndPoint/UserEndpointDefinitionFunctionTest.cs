@@ -22,6 +22,7 @@ namespace Helmes.WebApi.EndPoint.Tests
         {
             app = new TaskApplication();
             client = app.CreateClient();
+            
         }
 
         [TestMethod]

@@ -72,7 +72,7 @@ namespace Helmes.WebApi.EndPoint
         /// </summary>
         public void DefineServices(IServiceCollection services)
         {
-            services.AddSingleton<IUserService, UserService>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

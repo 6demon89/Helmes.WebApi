@@ -12,8 +12,7 @@ namespace Helmes.WebApiTests
     {
         protected override IHost CreateHost(IHostBuilder builder)
         {
-            var root = new InMemoryDatabaseRoot();
-
+            var root = new InMemoryDatabaseRoot();            
             builder.ConfigureServices(services =>
             {
                 services.AddSingleton(sp =>

@@ -241,7 +241,7 @@ namespace Helmes.WebApi.EndPoint.Tests
             var result = await controller.UpdateUserAsync(repositoryMock.Object, Guid.NewGuid(), user);
             var resultUser = result.GetOkObjectResultValue<User>();
             Assert.IsNotNull(result);
-            Assert.AreEqual(400, result.GetOkObjectResultStatusCode());
+            Assert.AreEqual(404, result.GetOkObjectResultStatusCode());
         }
 
         [TestMethod]
