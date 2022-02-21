@@ -12,6 +12,9 @@ To start WebApi navigate into the project folder and execute command 'dotnet pub
 To start React App, navigate to '\Helmes.Front\my-app' ans start with npm start command
 ``
 
+Please make sure that react js utilize uses correct port for fetching data as WeApi.
+
+
 ## Development setup
 
 Please ensure that SQL Server or SQL Server Express is installed and running;
