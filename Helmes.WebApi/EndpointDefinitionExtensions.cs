@@ -5,7 +5,7 @@
 public static class EndpointDefinitionExtensions
 {
     /// <summary>
-    /// Checks assemtly for all implementation of IEndpointDefinition interface and adds it to the service in a singleton scope
+    /// Checks assembly for all implementation of IEndpointDefinition interface and adds it to the service in a singleton scope
     /// </summary>
     public static void AddEndpointDefinitions(
         this IServiceCollection services, params Type[] scanMarkers)
