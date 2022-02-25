@@ -10,7 +10,7 @@ public interface IEndpointDefinition
     void DefineServices(IServiceCollection services);
 
     /// <summary>
-    /// Provides mapping cabalities
+    /// Provides mapping capabilities
     /// </summary>
     void DefineEndpoints(WebApplication app);
 }
